@@ -3,14 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { RowerComponent } from './rower/rower.component';
+import { RowerAdminComponent } from './rower-admin/rower-admin.component';
+import { EditRowerComponent } from './edit-rower/edit-rower.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddRowerComponent } from './add-rower/add-rower.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    RowerComponent,
+    RowerAdminComponent,
+    EditRowerComponent,
+    AddRowerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
