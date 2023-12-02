@@ -9,6 +9,7 @@ import { RowerAdminComponent } from './rower-admin/rower-admin.component';
 import { EditRowerComponent } from './edit-rower/edit-rower.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddRowerComponent } from './add-rower/add-rower.component';
+import { RowersService } from './rowers.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { AddRowerComponent } from './add-rower/add-rower.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [RowersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

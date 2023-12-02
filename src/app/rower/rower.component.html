@@ -1,8 +1,9 @@
 <div class="wyswietl">
+    <h1>Dostępne rowery</h1>
     <ul>
         <li *ngFor="let bike of BikeArray;index as i" >
-            {{bike.model}}
-</li>
+            {{bike.model}},{{bike.rodzaj}},{{bike.rozmiarRamy}},{{bike.cena}}
+        </li>
     </ul>
 </div>
 

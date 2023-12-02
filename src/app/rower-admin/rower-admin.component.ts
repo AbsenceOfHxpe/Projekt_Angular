@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Rower } from '../rower';
+import { RowersService } from '../rowers.service';
 
 @Component({
   selector: 'app-rower-admin',
@@ -9,9 +10,12 @@ import { Rower } from '../rower';
 export class RowerAdminComponent {
   BikeArray:Rower[];
   ktoryRowerDoEdycji=-1;
+  rowersService:RowersService;
     
-    constructor(){
+    constructor(rowersService:RowersService){
       this.BikeArray=[new Rower("RMX Swift","miejski","XL",15.10)];
+      this.rowersService = rowersService;
+      this.BikeArray = this.rowersService.getRowers();
     }
 
 
@@ -21,6 +25,7 @@ export class RowerAdminComponent {
     }
 
     RemoveRower(index:number){
-      this.BikeArray = this.BikeArray.filter((obj, i) => i !== index);;
+      this.BikeArray.filter((obj, i) => i !== index);
+      this.rowersService.deleteRower(index);
     }
 }

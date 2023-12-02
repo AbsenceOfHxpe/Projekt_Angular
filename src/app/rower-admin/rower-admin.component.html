@@ -1,18 +1,16 @@
 <div class="wyswietl">
+    <h1>Dostępne rowery (widok admina)</h1>
     <form>
     <ul>
         <li *ngFor="let bike of BikeArray;index as i" >
             {{bike.model}},{{bike.rodzaj}},{{bike.rozmiarRamy}},{{bike.cena}}
-            <button>Edytuj</button>
             <button (click)="RemoveRower(i)">Usun</button>
             <app-edit-rower 
             [rower]="bike"
             [ktoryRower]="i"
             (doEditInParent)="doEditRower($event)"> 
-        
-        
         </app-edit-rower>
-</li>
+        </li>
     </ul>
     
     </form>

@@ -3,7 +3,7 @@
     Rodzaj: <input type="text" formControlName="rodzaj">
     rozmiar Ramy: <input type="text" formControlName="rozmiarRamy">
     Cena Wypożyczenia: <input type="number" formControlName="cena">
-    <input [disabled]="!form4edit.valid" type="submit" value="Send">
+    <input [disabled]="!form4edit.valid" type="submit" value="Edytuj">
     <div class="error" *ngIf="form4edit.controls['model'].errors?.['required']">
         Model jest obowiązkowy
     </div>

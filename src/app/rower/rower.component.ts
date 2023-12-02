@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Rower } from '../rower';
+import { RowersService } from '../rowers.service';
 
 
 @Component({
@@ -8,13 +9,11 @@ import { Rower } from '../rower';
   styleUrl: './rower.component.css'
 })
 
-
-
 export class RowerComponent {
     BikeArray:Rower[];
     
-    constructor(){
-      this.BikeArray=[new Rower("RMX Swift","miejski","XL",15.10)];
+    constructor(private rowersService:RowersService){
+      this.BikeArray = this.rowersService.getRowers();
     }
 
 }
