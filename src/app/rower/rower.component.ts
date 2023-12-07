@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Rower } from '../rower';
 import { RowersService } from '../rowers.service';
-import { SortBikesPipe } from "../sort-bikes.pipe";
 
 
 @Component({
@@ -12,8 +11,8 @@ import { SortBikesPipe } from "../sort-bikes.pipe";
 
 export class RowerComponent {
     BikeArray:Rower[];
-    sortValue:string='';
-    sortVariable:string='';
+    sortValue:string='asc';
+    sortVariable:string='model';
     
     constructor(private rowersService:RowersService){
       this.BikeArray = this.rowersService.getRowers();

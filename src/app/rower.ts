@@ -5,14 +5,14 @@ function generateUniqueId(): number {
 }
 
 export class Rower {
-  //id: number;
+  id: number;
   model:string;
   rodzaj:string;
   rozmiarRamy:string;
   cena: number;
 
-  constructor(model: string, rodzaj: string, rozmiarRamy: string, cena: number) {
-    //this.id = generateUniqueId();
+  constructor(id: number, model: string, rodzaj: string, rozmiarRamy: string, cena: number) {
+    this.id = id;
     this.model = model;
     this.rodzaj = rodzaj;
     this.rozmiarRamy = rozmiarRamy;

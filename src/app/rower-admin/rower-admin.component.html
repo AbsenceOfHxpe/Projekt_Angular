@@ -5,13 +5,13 @@
         <li *ngFor="let bike of BikeArray;index as i" >
             {{bike.model}},{{bike.rodzaj}},{{bike.rozmiarRamy}},{{bike.cena | currency: "EUR": 'symbol'}}
             <button (click)="RemoveRower(i)">Usun</button>
-            <app-edit-rower 
+            <button [routerLink]="['/edit-rower-component',bike.id]">Edit</button>
+            <!-- <app-edit-rower 
             [rower]="bike"
-            [ktoryRower]="i"
+            [ktoryRower]="bike.id"
             (doEditInParent)="doEditRower($event)"> 
-        </app-edit-rower>
+        </app-edit-rower> -->
         </li>
     </ul>
-    
     </form>
 </div>
