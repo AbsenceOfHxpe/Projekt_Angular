@@ -9,8 +9,8 @@ export class RowersService {
   constructor(private http: HttpClient) { 
     this.BikeArray=[
       new Rower("RMX Swift","Miejski","XL",15.10),
-      new Rower("MTB Indiana","Gorski","M",22.50),
-      new Rower("Turbo Levo","Szosowy","L",16.00)
+      new Rower("MTB Indiana","Szosowy","M",22.50),
+      new Rower("Turbo Levo","Gorski","L",16.00)
     ];
   }
   getRowers():Rower[]{

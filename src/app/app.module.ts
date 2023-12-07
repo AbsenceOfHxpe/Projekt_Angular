@@ -12,6 +12,8 @@ import { AddRowerComponent } from './add-rower/add-rower.component';
 import { RowersService } from './rowers.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SortBikesPipe } from "./sort-bikes.pipe";
+import { CommonModule } from '@angular/common';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -30,7 +32,11 @@ import { SortBikesPipe } from "./sort-bikes.pipe";
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
-        SortBikesPipe
+        SortBikesPipe,
+        CommonModule, 
+        RouterOutlet, 
+        RouterLink, 
+        RouterLinkActive
     ]
 })
 export class AppModule { }

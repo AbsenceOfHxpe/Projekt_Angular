@@ -1,15 +1,22 @@
 <div class="wyswietl">
+    
     <h1>Dostępne rowery</h1>
     <label for="cars">Sort:</label>
     <select [(ngModel)]="sortValue">
-        <option [ngValue]="'asc'" type="text">Ascending</option>
-        <option [ngValue]="'dsc'" type="text">Descending</option>
+        <option [ngValue]="'asc'" type="text">Rosnąco</option>
+        <option [ngValue]="'dsc'" type="text">Malejąco</option>
+    </select>
+    <select [(ngModel)]="sortVariable">
+        <option [ngValue]="'model'" type="text">Model</option>
+        <option [ngValue]="'rodzaj'" type="text">Rodzaj</option>
+        <option [ngValue]="'rozmiarRamy'" type="text">Rozmiar Ramy</option>
+        <option [ngValue]="'cena'" type="text">Cena</option>
     </select>
     <ul>
-        <li *ngFor="let bike of BikeArray | sortBikes: sortValue;index as i" >
+        <li *ngFor="let bike of BikeArray | sortBikes: sortValue : sortVariable;index as i" >
             {{bike.model}},{{bike.rodzaj}},{{bike.rozmiarRamy}},{{bike.cena | currency: "EUR": 'symbol'}}
         </li>
     </ul>
 </div>
-
+<router-outlet></router-outlet>
 

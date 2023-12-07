@@ -13,6 +13,7 @@ import { SortBikesPipe } from "../sort-bikes.pipe";
 export class RowerComponent {
     BikeArray:Rower[];
     sortValue:string='';
+    sortVariable:string='';
     
     constructor(private rowersService:RowersService){
       this.BikeArray = this.rowersService.getRowers();
