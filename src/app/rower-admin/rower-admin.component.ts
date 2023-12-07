@@ -12,9 +12,9 @@ export class RowerAdminComponent {
   ktoryRowerDoEdycji=-1;
   private rowersService:RowersService;
     
-    constructor(private r:RowersService){
+    constructor(private _rowersService:RowersService){
       //this.BikeArray=[new Rower("RMX Swift","miejski","XL",15.10)];
-      this.rowersService = r;
+      this.rowersService = _rowersService;
       this.BikeArray = this.rowersService.getRowers();
     }
 

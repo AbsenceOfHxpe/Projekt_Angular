@@ -25,8 +25,8 @@ export class EditRowerComponent implements OnInit {
 
   private rowersService:RowersService;
 
-  constructor(rowersService:RowersService){
-    this.rowersService = rowersService;
+  constructor(private _rowersService:RowersService){
+    this.rowersService = _rowersService;
     this.form4edit = new FormGroup({
       model: new FormControl('', [Validators.required,Validators.maxLength(30)]),
       rodzaj: new FormControl('', [Validators.required, Validators.pattern('^[A-Z][a-z]*$')]),

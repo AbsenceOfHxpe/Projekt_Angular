@@ -14,8 +14,8 @@ export class RowerComponent {
     sortValue:string='asc';
     sortVariable:string='model';
     
-    constructor(private rowersService:RowersService){
-      this.BikeArray = this.rowersService.getRowers();
+    constructor(private _rowersService:RowersService){
+      this.BikeArray = this._rowersService.getRowers();
     }
 
 }
