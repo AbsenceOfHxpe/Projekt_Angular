@@ -1,8 +1,13 @@
 <div class="wyswietl">
     <h1>Dostępne rowery</h1>
+    <label for="cars">Sort:</label>
+    <select [(ngModel)]="sortValue">
+        <option [ngValue]="'asc'" type="text">Ascending</option>
+        <option [ngValue]="'dsc'" type="text">Descending</option>
+    </select>
     <ul>
-        <li *ngFor="let bike of BikeArray;index as i" >
-            {{bike.model}},{{bike.rodzaj}},{{bike.rozmiarRamy}},{{bike.cena}}
+        <li *ngFor="let bike of BikeArray | sortBikes: sortValue;index as i" >
+            {{bike.model}},{{bike.rodzaj}},{{bike.rozmiarRamy}},{{bike.cena | currency: "EUR": 'symbol'}}
         </li>
     </ul>
 </div>

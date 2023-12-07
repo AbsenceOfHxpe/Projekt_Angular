@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Rower } from './rower';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class RowersService {
   private BikeArray:Rower[]=[];
 
-  constructor() { 
+  constructor(private http: HttpClient) { 
     this.BikeArray=[
       new Rower("RMX Swift","Miejski","XL",15.10),
       new Rower("MTB Indiana","Gorski","M",22.50),
