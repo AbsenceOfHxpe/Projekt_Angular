@@ -1,5 +1,3 @@
-/* Dodaj ten kod CSS do swojego pliku stylów lub uzupełnij istniejący kod */
-
 header {
     background-color: #333;
     color: #fff;
@@ -41,10 +39,6 @@ header {
   }
   
   nav a:hover {
-    color: #ffd700; /* Zmiana koloru na żółty po najechaniu myszką */
-  }
-  
-  .active {
-    color: #ffd700; /* Kolor dla aktywnego linku */
+    color: #ffd700; 
   }
   

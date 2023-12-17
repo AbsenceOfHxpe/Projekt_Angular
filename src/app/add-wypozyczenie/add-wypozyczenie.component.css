@@ -1,11 +1,9 @@
-/* Dodaj ten kod CSS do swojego pliku stylów lub uzupełnij istniejący kod */
-
 .wypozycz {
   font-family: 'Arial', sans-serif;
   max-width: 400px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column; /* Zmiana kierunku flex na kolumnowy */
+  flex-direction: column; 
 }
 
 h2 {
@@ -41,14 +39,12 @@ input[type="submit"]:disabled {
   margin-top: 5px;
 }
 
-/* Dodaj nowe reguły dla formularza */
 form {
   display: flex;
   flex-direction: column;
 }
 
-/* Dodaj nową regułę dla buttona */
 form input[type="submit"] {
   align-self: flex-end;
-  margin-top: 10px; /* Zachowaj margines od góry */
+  margin-top: 10px; 
 }
