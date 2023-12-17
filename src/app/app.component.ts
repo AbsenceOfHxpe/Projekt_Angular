@@ -12,6 +12,7 @@ import { filter } from 'rxjs/operators';
 export class AppComponent implements OnInit {
   title: string = '';
 
+
   constructor(private _router: Router) {}
 
   ngOnInit(): void {
@@ -27,6 +28,7 @@ export class AppComponent implements OnInit {
         currentRoute = currentRoute.firstChild;
       }
 
+
       // Sprawdź, czy trasa zawiera dane 'pageTitle'
       if (currentRoute.data && currentRoute.data['pageTitle']) {
         this.title = currentRoute.data['pageTitle'];
@@ -35,4 +37,6 @@ export class AppComponent implements OnInit {
       }
     });
   }
+
 }
+

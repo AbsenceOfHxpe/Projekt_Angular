@@ -35,4 +35,9 @@ export class RowersService {
       }
     }
   }
+  addRower(newRower: Rower): void {
+    newRower.id = this.BikeArray.length + 1;
+    this.BikeArray.push(newRower);
+  }
+
 }

@@ -14,6 +14,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { SortBikesPipe } from "./sort-bikes.pipe";
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { AddWypozyczenieComponent } from './add-wypozyczenie/add-wypozyczenie.component';
+import { WypozyczenieService } from './wypozyczenie.service';
+import { WypozyczeniaComponent } from './wypozyczenia/wypozyczenia.component';
+import { ZwrotComponent } from './zwrot/zwrot.component';
+
 
 @NgModule({
     declarations: [
@@ -22,9 +27,12 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
         RowerComponent,
         RowerAdminComponent,
         EditRowerComponent,
-        AddRowerComponent
+        AddRowerComponent,
+        AddWypozyczenieComponent,
+        WypozyczeniaComponent,
+        ZwrotComponent
     ],
-    providers: [RowersService, SortBikesPipe],
+    providers: [RowersService, WypozyczenieService, SortBikesPipe],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
