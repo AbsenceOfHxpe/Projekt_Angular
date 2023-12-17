@@ -8,7 +8,8 @@
       <p>Czas wypożyczenia: {{hoursBorrowed | number:'1.2-2'}}h</p>
       <p>Maksymalny czas: {{borrow.liczbaGodzin}}h</p>
       <p>Aktualna opłata: {{hoursBorrowed * bike.cena | number:'1.2-2'| currency: "GBP": 'symbol'}}</p>
-      <p>Do zapłaty: </p>
+      <p>Opłata za wcześniejszy zwrot: {{(borrow.liczbaGodzin-hoursBorrowed)*(bike.cena/2) | number:'1.2-2'| currency:"GBP":'symbol'}}</p>
+      <p>Do zapłaty: {{(hoursBorrowed * bike.cena)+((borrow.liczbaGodzin-hoursBorrowed)*(bike.cena/2)) | number:'1.2-2' | currency:"GBP":'symbol'}} </p>
     </div>
     <button (click)="deleteWynajetyRower(borrowId)">Zwróć</button>
   </div>
