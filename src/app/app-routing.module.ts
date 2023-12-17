@@ -6,14 +6,16 @@ import { AddWypozyczenieComponent } from './add-wypozyczenie/add-wypozyczenie.co
 import { WypozyczeniaComponent } from './wypozyczenia/wypozyczenia.component';
 import { ZwrotComponent } from './zwrot/zwrot.component';
 import { RowerComponent } from './rower/rower.component';
+import { AddRowerComponent } from './add-rower/add-rower.component';
+
 
 const routes: Routes = [
-  { path: 'rower-component', component: RowerComponent },
-  { path: 'rower-admin-component', component: RowerAdminComponent },
-  { path: 'edit-rower-component/:id', component: EditRowerComponent },
+  { path: 'rower-admin-component/edit-rower-component/:id', component: EditRowerComponent, data: {pageTitle: 'Edycja roweru'} },
+  { path: 'rower-admin-component/add-rower-component', component: AddRowerComponent, data: {pageTitle: 'Dodawanie roweru'}},
   { path: 'add-wypozyczenie-component/:id', component: AddWypozyczenieComponent },
-  { path: 'wypozyczenia-component', component: WypozyczeniaComponent },
-  { path: 'zwrot-component/:id', component: ZwrotComponent }
+  { path: 'wypozyczenia-component', component: WypozyczeniaComponent, data: {pageTitle: 'Wypożyczenia'}},
+  { path: 'zwrot-component/:id', component: ZwrotComponent, data: {pageTitle: 'ypożyczenia'}},
+  { path: 'rower-admin-component', component: RowerAdminComponent, data: {pageTitle: 'Admin Panel'}}
 ];
 
 

@@ -19,6 +19,7 @@ import { WypozyczenieService } from './wypozyczenie.service';
 import { WypozyczeniaComponent } from './wypozyczenia/wypozyczenia.component';
 import { ZwrotComponent } from './zwrot/zwrot.component';
 
+
 @NgModule({
     declarations: [
         AppComponent,
