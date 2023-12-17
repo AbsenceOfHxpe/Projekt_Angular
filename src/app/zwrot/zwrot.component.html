@@ -4,10 +4,10 @@
       <p>Model: {{bike.model}}</p>
       <p>Rodzaj: {{bike.rodzaj}}</p>
       <p>Rozmiar ramy: {{bike.rozmiarRamy}}</p>
-      <p>Cena: {{bike.cena}}</p>
-      <p>Czas wypożyczenia: {{hoursBorrowed | number:'1.2-2'}}</p>
-      <p>Maksymalny czas: {{borrow.liczbaGodzin}}</p>
-      <p>Aktualna opłata: {{hoursBorrowed * bike.cena | number:'1.2-2'}}</p>
+      <p>Cena: {{bike.cena | currency: "GBP": 'symbol'}}</p>
+      <p>Czas wypożyczenia: {{hoursBorrowed | number:'1.2-2'}}h</p>
+      <p>Maksymalny czas: {{borrow.liczbaGodzin}}h</p>
+      <p>Aktualna opłata: {{hoursBorrowed * bike.cena | number:'1.2-2'| currency: "GBP": 'symbol'}}</p>
       <p>Do zapłaty: </p>
     </div>
     <button (click)="deleteWynajetyRower(borrowId)">Zwróć</button>
