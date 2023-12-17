@@ -1,0 +1,45 @@
+/* Dodaj ten kod CSS do swojego pliku stylów lub uzupełnij istniejący kod */
+
+.wypozycz {
+    font-family: 'Arial', sans-serif;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Zmiana kierunku flex na kolumnowy */
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  input {
+    margin-bottom: 10px;
+    padding: 8px;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+  }
+  
+  input[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    margin-top: 10px;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 5px;
+  }
+  

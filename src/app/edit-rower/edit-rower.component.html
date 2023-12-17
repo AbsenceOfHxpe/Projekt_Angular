@@ -1,13 +1,14 @@
-<form [formGroup]="form4edit" (ngSubmit)='doEditRower()'>
+<form [formGroup]="form4edit" (ngSubmit)="doEditRower()">
+    <h1>Edycja roweru</h1>
     Model: <input type="text" formControlName="model">
     Rodzaj: <input type="text" formControlName="rodzaj">
-    rozmiar Ramy: <input type="text" formControlName="rozmiarRamy">
+    Rozmiar Ramy: <input type="text" formControlName="rozmiarRamy">
     Cena Wypożyczenia: <input type="number" formControlName="cena">
     <input [disabled]="!form4edit.valid" type="submit" value="Edytuj">
     <div class="error" *ngIf="form4edit.controls['model'].errors?.['required']">
         Model jest obowiązkowy
     </div>
-    <div class="error" *ngIf="form4edit.controls['model'].errors?.['maxlenght']">
+    <div class="error" *ngIf="form4edit.controls['model'].errors?.['maxlength']">
         Model ma zbyt długą nazwę
     </div>
     <div class="error" *ngIf="form4edit.controls['rodzaj'].errors?.['required']">
@@ -19,16 +20,13 @@
     <div class="error" *ngIf="form4edit.controls['rozmiarRamy'].errors?.['required']">
         Rozmiar ramy jest obowiązkowy
     </div>
-
     <div class="error" *ngIf="form4edit.controls['rozmiarRamy'].errors?.['pattern']">
         Tylko wielkie litery
     </div>
-
-
     <div class="error" *ngIf="form4edit.controls['cena'].errors?.['min']">
         Cena jest zbyt niska
     </div>
     <div class="error" *ngIf="form4edit.controls['cena'].errors?.['max']">
-        Imie jest zbyt wysoka
+        Cena jest zbyt wysoka
     </div>
-    </form>
+</form>

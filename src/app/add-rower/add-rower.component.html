@@ -1,37 +1,42 @@
 <div class="dodaj">
     <h1>Dodaj rower</h1>
-<form [formGroup]="form4edit" (ngSubmit)='doAddRower()'>
-    Model: <input type="text" formControlName="model">
-    Rodzaj: <input type="text" formControlName="rodzaj">
-    rozmiar Ramy: <input type="text" formControlName="rozmiarRamy">
-    Cena Wypożyczenia: <input type="number" formControlName="cena">
-    <input [disabled]="!form4edit.valid" type="submit" value="Dodaj rower">
-    <div class="error" *ngIf="form4edit.controls['model'].errors?.['required']">
-        Model jest obowiązkowy
-    </div>
-    <div class="error" *ngIf="form4edit.controls['model'].errors?.['maxlenght']">
-        Model ma zbyt długą nazwę
-    </div>
-    <div class="error" *ngIf="form4edit.controls['rodzaj'].errors?.['required']">
-        Rodzaj jest obowiązkowy
-    </div>
-    <div class="error" *ngIf="form4edit.controls['rodzaj'].errors?.['pattern']">
-        Pierwsza litera musi być duża
-    </div>
-    <div class="error" *ngIf="form4edit.controls['rozmiarRamy'].errors?.['required']">
-        Rozmiar ramy jest obowiązkowy
-    </div>
+    <form [formGroup]="form4edit" (ngSubmit)="doAddRower()">
+        <label for="model">Model:</label>
+        <input type="text" formControlName="model" id="model">
+        <div class="error" *ngIf="form4edit.controls['model'].errors?.['required']">
+            Model jest obowiązkowy
+        </div>
+        <div class="error" *ngIf="form4edit.controls['model'].errors?.['maxlength']">
+            Model ma zbyt długą nazwę
+        </div>
 
-    <div class="error" *ngIf="form4edit.controls['rozmiarRamy'].errors?.['pattern']">
-        Tylko wielkie litery
-    </div>
+        <label for="rodzaj">Rodzaj:</label>
+        <input type="text" formControlName="rodzaj" id="rodzaj">
+        <div class="error" *ngIf="form4edit.controls['rodzaj'].errors?.['required']">
+            Rodzaj jest obowiązkowy
+        </div>
+        <div class="error" *ngIf="form4edit.controls['rodzaj'].errors?.['pattern']">
+            Pierwsza litera musi być duża
+        </div>
 
+        <label for="rozmiarRamy">Rozmiar Ramy:</label>
+        <input type="text" formControlName="rozmiarRamy" id="rozmiarRamy">
+        <div class="error" *ngIf="form4edit.controls['rozmiarRamy'].errors?.['required']">
+            Rozmiar ramy jest obowiązkowy
+        </div>
+        <div class="error" *ngIf="form4edit.controls['rozmiarRamy'].errors?.['pattern']">
+            Tylko wielkie litery
+        </div>
 
-    <div class="error" *ngIf="form4edit.controls['cena'].errors?.['min']">
-        Cena jest zbyt niska
-    </div>
-    <div class="error" *ngIf="form4edit.controls['cena'].errors?.['max']">
-        Cena jest zbyt wysoka
-    </div>
+        <label for="cena">Cena Wypożyczenia:</label>
+        <input type="number" formControlName="cena" id="cena">
+        <div class="error" *ngIf="form4edit.controls['cena'].errors?.['min']">
+            Cena jest zbyt niska
+        </div>
+        <div class="error" *ngIf="form4edit.controls['cena'].errors?.['max']">
+            Cena jest zbyt wysoka
+        </div>
+
+        <input [disabled]="!form4edit.valid" type="submit" value="Dodaj rower">
     </form>
 </div>

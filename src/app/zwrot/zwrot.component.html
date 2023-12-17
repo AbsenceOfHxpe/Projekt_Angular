@@ -1,14 +1,15 @@
-<h2>Zwróć wypożyczenie nr. {{borrowId}}</h2>
-<p>Model: {{bike.model}}</p>
-<p>Rodzaj: {{bike.rodzaj}}</p>
-<p>Rozmiar ramy: {{bike.rozmiarRamy}}</p>
-<p>Cena: {{bike.cena}}</p> 
-
-<!-- <p>Czas wypożyczenia: {{hoursBorrowedAsDate | date:'hh:mm'}}</p> Czas źle się o godzinę ustawia -->
-<p>Czas wypożyczenia: {{hoursBorrowed | number:'1.2-2'}}</p>
-<p>Maksymalny czas: {{borrow.liczbaGodzin}}</p>
-<p>Aktualna opłata: {{hoursBorrowed*bike.cena | number:'1.2-2'}}</p>
-
-<p>Do zapłaty: </p>
-
-<button (click)="deleteWynajetyRower(borrowId)">Zwróć</button>
+<div class="container">
+    <h2>Zwróć wypożyczenie nr. {{borrowId}}</h2>
+    <div class="bike-info">
+      <p>Model: {{bike.model}}</p>
+      <p>Rodzaj: {{bike.rodzaj}}</p>
+      <p>Rozmiar ramy: {{bike.rozmiarRamy}}</p>
+      <p>Cena: {{bike.cena}}</p>
+      <p>Czas wypożyczenia: {{hoursBorrowed | number:'1.2-2'}}</p>
+      <p>Maksymalny czas: {{borrow.liczbaGodzin}}</p>
+      <p>Aktualna opłata: {{hoursBorrowed * bike.cena | number:'1.2-2'}}</p>
+      <p>Do zapłaty: </p>
+    </div>
+    <button (click)="deleteWynajetyRower(borrowId)">Zwróć</button>
+  </div>
+  

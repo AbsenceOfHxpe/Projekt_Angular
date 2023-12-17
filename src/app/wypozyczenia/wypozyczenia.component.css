@@ -1,0 +1,31 @@
+/* Dodaj ten kod CSS do swojego pliku stylów lub uzupełnij istniejący kod */
+
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    position: relative;
+  }
+  
+  li button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    transition: background-color 0.3s;
+  }
+  
+  li button:hover {
+    background-color: #45a049;
+  }
+  
