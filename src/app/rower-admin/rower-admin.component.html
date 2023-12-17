@@ -3,9 +3,9 @@
     <form>
     <ul>
         <li *ngFor="let bike of BikeArray;index as i" >
-            {{bike.model}},{{bike.rodzaj}},{{bike.rozmiarRamy}},{{bike.cena | currency: "EUR": 'symbol'}}
+            {{bike.model}},{{bike.rodzaj}},{{bike.rozmiarRamy}},{{bike.cena | currency: "GBP": 'symbol'}}
             <button (click)="RemoveRower(i)">Usun</button>
-            <button [routerLink]="['/edit-rower-component',bike.id]">Edit</button>
+            <button [routerLink]="['/rower-admin-component/edit-rower-component',bike.id]">Edit</button>
             <!-- <app-edit-rower 
             [rower]="bike"
             [ktoryRower]="bike.id"

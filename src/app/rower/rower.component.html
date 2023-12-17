@@ -14,7 +14,7 @@
     </select>
     <ul>
         <li *ngFor="let bike of BikeArray | sortBikes: sortValue : sortVariable;index as i" >
-            {{bike.model}},{{bike.rodzaj}},{{bike.rozmiarRamy}},{{bike.cena | currency: "EUR": 'symbol'}}
+            {{bike.model}},{{bike.rodzaj}},{{bike.rozmiarRamy}},{{bike.cena | currency: "GBP": 'symbol'}}
         </li>
     </ul>
 </div>
