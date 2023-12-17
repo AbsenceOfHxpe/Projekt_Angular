@@ -15,6 +15,7 @@ import { SortBikesPipe } from "./sort-bikes.pipe";
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
+
 @NgModule({
     declarations: [
         AppComponent,
