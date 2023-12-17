@@ -13,6 +13,7 @@ export class RowerComponent {
     BikeArray:Rower[];
     sortValue:string='asc';
     sortVariable:string='model';
+code: string|undefined;
     
     constructor(private _rowersService:RowersService){
       this.BikeArray = this._rowersService.getRowers();

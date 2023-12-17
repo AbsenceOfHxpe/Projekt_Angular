@@ -12,10 +12,12 @@ import { AddRowerComponent } from './add-rower/add-rower.component';
 const routes: Routes = [
   { path: 'rower-admin-component/edit-rower-component/:id', component: EditRowerComponent, data: {pageTitle: 'Edycja roweru'} },
   { path: 'rower-admin-component/add-rower-component', component: AddRowerComponent, data: {pageTitle: 'Dodawanie roweru'}},
+
   { path: 'add-wypozyczenie-component/:id', component: AddWypozyczenieComponent },
   { path: 'wypozyczenia-component', component: WypozyczeniaComponent, data: {pageTitle: 'Wypożyczenia'}},
   { path: 'zwrot-component/:id', component: ZwrotComponent, data: {pageTitle: 'ypożyczenia'}},
   { path: 'rower-admin-component', component: RowerAdminComponent, data: {pageTitle: 'Admin Panel'}}
+
 ];
 
 
