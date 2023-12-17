@@ -1,0 +1,19 @@
+<h2>Wypożycz</h2>
+<p>Model: {{bike.model}}</p>
+<p>Rodzaj: {{bike.rodzaj}}</p>
+<p>Rozmiar ramy: {{bike.rozmiarRamy}}</p>
+<p>Cena: {{bike.cena}}</p>
+<form [formGroup]="form4edit" (ngSubmit)='doAddWypozyczenie()'>
+    Id wypozyczenia (tymczasowo): <input [(ngModel)]="borrowId" type="number" formControlName="id">
+    Liczba godzin: <input [(ngModel)]="hoursCount" type="number" formControlName="borrowTimeInHours">
+    <input [disabled]="!form4edit.valid" type="submit" value="Wypożycz">
+    <div class="error" *ngIf="form4edit.controls['borrowTimeInHours'].errors?.['required']">
+        Podaj liczbę godzin
+    </div>
+    <div class="error" *ngIf="form4edit.controls['borrowTimeInHours'].errors?.['min']">
+        Rower można wypożyczyć na co najmniej 1 godzinę
+    </div>
+    <div class="error" *ngIf="form4edit.controls['borrowTimeInHours'].errors?.['max']">
+        Rower można wypożyczyć na co najwyżej 48 godzin
+    </div>
+</form>

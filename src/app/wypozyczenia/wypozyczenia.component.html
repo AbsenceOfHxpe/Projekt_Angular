@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let borrow of borrows;index as i" >
+        Id wypożyczenia: {{borrow.id}}, Id roweru: {{borrow.idRoweru}}, Data wynajmu: {{borrow.dataWynajmu | date:'yyyy-MM-dd HH:mm:ss'}}, Liczba godzin: {{borrow.liczbaGodzin}}
+        <button [routerLink]="['/zwrot-component',borrow.id]">Zwróć</button>
+    </li>
+</ul>
