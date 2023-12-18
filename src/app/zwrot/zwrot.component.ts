@@ -15,7 +15,6 @@ export class ZwrotComponent implements OnInit {
   bike: Rower;
   borrow: Wypozyczenie;
   hoursBorrowed: number;
-  sum: number;
 
 
   constructor(
@@ -34,11 +33,6 @@ export class ZwrotComponent implements OnInit {
     this.hoursBorrowed =
       (new Date().getTime() - new Date(this.borrow.dataWynajmu).getTime()) /
       (3600 * 1000);
-      if (this.hoursBorrowed<this.borrow.liczbaGodzin) {
-        this.sum = (this.hoursBorrowed * this.bike.cena)+((this.borrow.liczbaGodzin-this.hoursBorrowed)*(this.bike.cena/2));
-      } else {
-        this.sum = (this.hoursBorrowed * this.bike.cena)+((this.hoursBorrowed-this.borrow.liczbaGodzin)*this.bike.cena*2);
-      }
   }
 
   deleteWynajetyRower(id: number) {

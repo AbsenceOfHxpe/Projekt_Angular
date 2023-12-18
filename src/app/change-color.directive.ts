@@ -4,19 +4,25 @@ import { Directive, ElementRef, Input, OnChanges, TemplateRef, ViewContainerRef 
   selector: '[changeColor]'
 })
 export class ChangeColorDirective implements OnChanges {
-  @Input('changeColor') condition: any;
+  @Input('changeColor') condition: boolean;
+  index:number=0;
 
   constructor(private elRef: ElementRef) {
   }
 
   ngOnChanges() {
-      if (this.condition) {
-        this.elRef.nativeElement.style.color = 'red';
-        this.elRef.nativeElement.style.fontWeight= 'bold';
-      } else {
-        this.elRef.nativeElement.style.color = 'green';
-        this.elRef.nativeElement.style.fontWeight= 'bold';
-      }
+    if (this.condition) {
+        setInterval(() => {
+            if (this.index === 0) {
+                this.elRef.nativeElement.style.background = 'red';
+                this.index++;
+            }
+            else {
+                this.elRef.nativeElement.style.background = 'green';
+                this.index = 0;
+            }
+           }, 400);
+    }  
   }
 
 }
