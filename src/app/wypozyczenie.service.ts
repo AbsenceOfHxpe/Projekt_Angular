@@ -8,10 +8,11 @@ export class WypozyczenieService {
 
   constructor(private http: HttpClient) { 
     this.borrowsArray=[
-      new Wypozyczenie(5,3,new Date(2023,11,17,12,0,0),11)
+      new Wypozyczenie(1,3,new Date(2023,11,18,12,0,0),14)
     ];
   }
   addWynajetyRower(borrow: Wypozyczenie):void{
+    borrow.id = this.borrowsArray.length + 1;
     this.borrowsArray.push(borrow);
   }
 
@@ -25,7 +26,7 @@ export class WypozyczenieService {
         return this.borrowsArray[i];
       }
     }
-    return this.borrowsArray[0];
+    return null;
   }
   deleteWynajetyRower(id:number):void{
     console.log("Id borrow do usunięcia: "+id);

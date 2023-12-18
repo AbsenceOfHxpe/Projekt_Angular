@@ -5,8 +5,6 @@
     <p>Rozmiar ramy: {{bike.rozmiarRamy}}</p>
     <p>Cena: {{bike.cena | currency: "GBP": 'symbol'}}</p>
     <form [formGroup]="form4edit" (ngSubmit)="doAddWypozyczenie()">
-        <label for="borrowId">Id wypożyczenia (tymczasowo):</label>
-        <input [(ngModel)]="borrowId" type="number" formControlName="id" id="borrowId">
         <label for="hoursCount">Liczba godzin:</label>
         <input [(ngModel)]="hoursCount" type="number" formControlName="borrowTimeInHours" id="hoursCount">
         <p>Przybliżona kwota wypożyczenia: {{(hoursCount||0)*bike.cena | currency: "GBP": 'symbol'}}</p>

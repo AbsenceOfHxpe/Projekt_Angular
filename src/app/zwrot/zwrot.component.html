@@ -4,15 +4,15 @@
       <p>Model: {{bike.model}}</p>
       <p>Rodzaj: {{bike.rodzaj}}</p>
       <p>Rozmiar ramy: {{bike.rozmiarRamy}}</p>
-      <p>Cena: {{bike.cena | currency: "GBP": 'symbol'}}</p>
+      <p>Cena: {{bike.cena | currency: "GBP": 'symbol'}}/h</p>
       <p *ngIf="hoursBorrowed<borrow.liczbaGodzin">Czas wypożyczenia: {{hoursBorrowed | number:'1.2-2'}}h</p>
       <p style="color: red; font-weight: bold;" *ngIf="hoursBorrowed>=borrow.liczbaGodzin">Czas wypożyczenia: {{hoursBorrowed | number:'1.2-2'}}h</p>
       <p>Maksymalny czas: {{borrow.liczbaGodzin}}h</p>
-      <p>Aktualna opłata: {{hoursBorrowed * bike.cena | number:'1.2-2'| currency: "GBP": 'symbol'}}</p>
-      <p *ngIf="hoursBorrowed<borrow.liczbaGodzin">Opłata za wcześniejszy zwrot: {{(borrow.liczbaGodzin-hoursBorrowed)*(bike.cena/2) | number:'1.2-2'| currency:"GBP":'symbol'}}</p>
-      <p style="color: red; font-weight: bold;" *ngIf="hoursBorrowed>=borrow.liczbaGodzin">Kara za spóźnienie: {{(hoursBorrowed-borrow.liczbaGodzin)*bike.cena*2| number:'1.2-2'|currency:"GBP":'symbol'}}h</p>
-      <p *ngIf="hoursBorrowed<borrow.liczbaGodzin">Do zapłaty: {{(hoursBorrowed * bike.cena)+((borrow.liczbaGodzin-hoursBorrowed)*(bike.cena/2)) | number:'1.2-2' | currency:"GBP":'symbol'}} </p>
-      <p style="color: red; font-weight: bold;" *ngIf="hoursBorrowed>=borrow.liczbaGodzin">Do zapłaty: {{(hoursBorrowed * bike.cena)+((hoursBorrowed-borrow.liczbaGodzin)*bike.cena*2) | number:'1.2-2'|currency:"GBP":'symbol'}}h</p>
+      <p>Aktualna opłata: {{oplataStandardowa | currency: "GBP": 'symbol'}}</p>
+      <p *ngIf="kara < 0">Dołata za wcześniejszy zwrot: {{doplata | currency:"GBP":'symbol'}}</p>
+      <p style="color: red; font-weight: bold;" *ngIf="kara >= 0">Kara za spóźnienie: {{kara | currency:"GBP":'symbol'}}</p>
+      <p *ngIf="kara < 0">Do zapłaty: {{suma | currency:"GBP":'symbol'}} </p>
+      <p style="color: red; font-weight: bold;" *ngIf="kara >= 0">Do zapłaty: {{suma |currency:"GBP":'symbol'}}</p>
     </div>
     <button (click)="deleteWynajetyRower(borrowId)">Zwróć</button>
   </div>

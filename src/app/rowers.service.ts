@@ -23,7 +23,7 @@ export class RowersService {
         return this.BikeArray[i];
       }
     }
-    return this.BikeArray[0];
+    return null;
   }
   deleteRower(index:number):void{
     this.BikeArray.splice(index, 1)[0]; 

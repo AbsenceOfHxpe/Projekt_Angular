@@ -16,7 +16,6 @@ export class AddWypozyczenieComponent implements OnInit{
   form4edit:FormGroup;
   bikeId!:number;
   borrows:Wypozyczenie[] = [];
-  borrowId!:number;
   hoursCount!:number;
   bike:Rower;
   private wypozyczenieService:WypozyczenieService;
@@ -25,10 +24,9 @@ export class AddWypozyczenieComponent implements OnInit{
 
   constructor(private _rowersService:RowersService, private _wypozyczenieService:WypozyczenieService, private _router: Router){
     this.form4edit = new FormGroup({
-      id: new FormControl('', [Validators.required]),
       borrowTimeInHours: new FormControl('', [Validators.required, Validators.min(1), Validators.max(48)])
     });
-    this.bike = _rowersService.getRower(this.bikeId);
+    //this.bike = _rowersService.getRower(this.bikeId);
     this.wypozyczenieService = _wypozyczenieService;
     this.borrows = this.wypozyczenieService.getWynajeteRowery();
     this.rowerService = _rowersService;
@@ -40,11 +38,11 @@ export class AddWypozyczenieComponent implements OnInit{
     this.bikeId = bikeId;
     this.bike = this.rowerService.getRower(this.bikeId);
     this.form4edit.setValue(
-      {id: this.borrowId, borrowTimeInHours: this.hoursCount});
+      {borrowTimeInHours: this.hoursCount});
   }
 
   doAddWypozyczenie() : void {
-    this.wypozyczenieService.addWynajetyRower(new Wypozyczenie(this.borrowId,this.bikeId,new Date(),this.hoursCount));
-    this.router.navigate(['/wypozyczenia-component']);
+    this.wypozyczenieService.addWynajetyRower(new Wypozyczenie(0,this.bikeId,new Date(),this.hoursCount));
+    this.router.navigate(['/']);
   }
 }
