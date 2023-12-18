@@ -18,7 +18,7 @@ import { AddWypozyczenieComponent } from './add-wypozyczenie/add-wypozyczenie.co
 import { WypozyczenieService } from './wypozyczenie.service';
 import { WypozyczeniaComponent } from './wypozyczenia/wypozyczenia.component';
 import { ZwrotComponent } from './zwrot/zwrot.component';
-import { OplataService } from './oplata.service';
+import { ChangeColorDirective } from './change-color.directive';
 
 
 @NgModule({
@@ -31,9 +31,10 @@ import { OplataService } from './oplata.service';
         AddRowerComponent,
         AddWypozyczenieComponent,
         WypozyczeniaComponent,
-        ZwrotComponent
+        ZwrotComponent,
+        ChangeColorDirective
     ],
-    providers: [RowersService, WypozyczenieService, OplataService, SortBikesPipe],
+    providers: [RowersService, WypozyczenieService, SortBikesPipe],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,

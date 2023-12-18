@@ -2,7 +2,6 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WypozyczenieService } from '../wypozyczenie.service';
 import { RowersService } from '../rowers.service';
-import { OplataService } from '../oplata.service';
 import { Wypozyczenie } from '../wypozyczenie';
 import { Rower } from '../rower';
 
@@ -15,18 +14,15 @@ export class ZwrotComponent implements OnInit {
   borrowId!: number;
   bike: Rower;
   borrow: Wypozyczenie;
-  oplataStandardowa: number;
-  doplata: number;
-  kara: number;
-  suma: number;
   hoursBorrowed: number;
+  sum: number;
+
 
   constructor(
     private _rowersService: RowersService,
     private _wypozyczenieService: WypozyczenieService,
     private _router: Router,
-    private route: ActivatedRoute,
-    private _oplataService: OplataService
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -38,10 +34,11 @@ export class ZwrotComponent implements OnInit {
     this.hoursBorrowed =
       (new Date().getTime() - new Date(this.borrow.dataWynajmu).getTime()) /
       (3600 * 1000);
-    this.oplataStandardowa = this._oplataService.getOplataStandardowa(this.borrow.dataWynajmu,this.bike.cena);
-    this.doplata = this._oplataService.getDoplataZaWczesniejszyZwrot(this.borrow.dataWynajmu,this.bike.cena,this.borrow.liczbaGodzin);
-    this.kara = this._oplataService.getKara(this.borrow.dataWynajmu,this.bike.cena,this.borrow.liczbaGodzin);
-    this.suma = this._oplataService.getDoZaplaty(this.borrow.dataWynajmu,this.bike.cena,this.borrow.liczbaGodzin);
+      if (this.hoursBorrowed<this.borrow.liczbaGodzin) {
+        this.sum = (this.hoursBorrowed * this.bike.cena)+((this.borrow.liczbaGodzin-this.hoursBorrowed)*(this.bike.cena/2));
+      } else {
+        this.sum = (this.hoursBorrowed * this.bike.cena)+((this.hoursBorrowed-this.borrow.liczbaGodzin)*this.bike.cena*2);
+      }
   }
 
   deleteWynajetyRower(id: number) {

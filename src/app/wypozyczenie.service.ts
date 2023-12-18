@@ -8,7 +8,8 @@ export class WypozyczenieService {
 
   constructor(private http: HttpClient) { 
     this.borrowsArray=[
-      new Wypozyczenie(1,3,new Date(2023,11,18,12,0,0),14)
+      new Wypozyczenie(1,3,new Date(2023,11,18,12,0,0),14),
+      new Wypozyczenie(2,3,new Date(2023,11,17,12,0,0),10)
     ];
   }
   addWynajetyRower(borrow: Wypozyczenie):void{
@@ -20,7 +21,6 @@ export class WypozyczenieService {
     return this.borrowsArray;
   }
   getWynajetyRower(which: number):Wypozyczenie{
-    //console.log('get bike service',this.BikeArray);
     for (let i = 0; i < this.borrowsArray.length; i++) {
       if (this.borrowsArray[i].id === which) {
         return this.borrowsArray[i];
